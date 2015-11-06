@@ -6,7 +6,10 @@
 package models;
 
 import com.google.code.morphia.annotations.Entity;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import play.data.validation.Required;
 import play.modules.morphia.Model;
 import models.DetVenta;
@@ -30,23 +33,29 @@ public class Venta extends Model {
     
    /* DetVenta detventa = new DetVenta(folio, Integer.SIZE, total)*/
     
-    @Required
-    public DetVenta producto;
-    
-    @Required
-    public DetVenta cantidad;
-    
-    @Required
-    public DetVenta precio;
+   // List<DetVenta> detventa = new ArrayList<>();
+     
 
+    public Venta(Date fecha, Double total, String folio) {
+        this.fecha = fecha;
+        this.total = total;
+        this.folio = folio;
+        
+         List<DetVenta> detventa = new ArrayList<>();}  
+        
+          
+        
+
+    
+    /*
     public Venta(Date fecha, Double total, String folio) {
         this.fecha = fecha;
         this.total = total;
         this.folio = folio;
         /*this.producto = producto;
         this.cantidad = cantidad;
-        this.precio = precio;*/
-    }
+        this.precio = precio;
+    }*/
 
    
 
